@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity8">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -284,8 +283,10 @@
         android:layout_height="wrap_content"
         app:itemIconSize="30dp"
         android:layout_gravity="bottom"
+        app:backgroundTint="#E8F5E9"
         app:itemGravity="center"
-        app:backgroundTint="@color/white">
+
+        >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/action_bar"
             android:layout_gravity="center"

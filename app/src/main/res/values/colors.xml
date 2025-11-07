@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- لون الأيقونات عند التحديد -->
+    <color name="green">#4CAF50</color>
+    <!-- لون الأيقونات عند عدم التحديد -->
+    <color name="dark_green">#2C6B2F</color>
 </resources>
