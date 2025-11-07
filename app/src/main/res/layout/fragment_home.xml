@@ -1,17 +1,88 @@
-<!-- res/layout/fragment_home.xml -->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#FFFFFF"
+    tools:context=".HomeFragment">
 
-    <!-- Example UI for HomeFragment -->
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Home"
-        android:textSize="24sp"
+    <!-- Menu Icon -->
+    <ImageView
+        android:id="@+id/ic_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/m"
+        android:contentDescription="Menu"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+
+    <!-- App Name -->
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EcoSphere"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        app:layout_constraintTop_toBottomOf="@id/ic_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Hello -->
+    <TextView
+        android:id="@+id/helloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello!"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        app:layout_constraintTop_toBottomOf="@id/appName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Slogan -->
+    <TextView
+        android:id="@+id/sloganText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Grow your tree, grow a better world!"
+        android:textSize="18sp"
+        android:textColor="#388E3C"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/helloText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"/>
+
+    <!-- Circle with Plant -->
+    <FrameLayout
+        android:id="@+id/circleContainer"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/circle_background1"
+        app:layout_constraintTop_toBottomOf="@id/sloganText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_background1"
+            android:src="@drawable/seed_tree1"
+            android:contentDescription="Plant"/>
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

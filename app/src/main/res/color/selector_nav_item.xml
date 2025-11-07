@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- العنصر المختار -->
+    <item android:state_checked="true" android:color="#1D4F00"/>
+    <!-- العنصر العادي -->
+    <item android:color="#7A8F7A"/>
+</selector>
