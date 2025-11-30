@@ -13,23 +13,27 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNav: BottomNavigationView = findViewById(R.id.bottom_nav)
 
-        // إعداد listener لتحديد الفراجمنت عند التبديل
-        bottomNav.setOnNavigationItemSelectedListener { menuItem ->
-            val fragment: Fragment = when(menuItem.itemId) {
-                R.id.nav_home -> HomeFragment()
-                R.id.nav_challenges -> ChallengesFragment()
-                R.id.nav_profile -> ProfileFragment()
-                else -> HomeFragment()  // الافتراضي
-            }
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment, fragment)
-                .commit()
-            true
-        }
-
-        // تأكد من اختيار الصفحة الافتراضية عند بدء التطبيق
+        // أول ما الأبلكيشن يفتح نحط HomeFragment
         if (savedInstanceState == null) {
+            openFragment(HomeFragment())
             bottomNav.selectedItemId = R.id.nav_home
         }
+
+        // التبديل بين التابات بتاعة البوتوم ناف
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> openFragment(HomeFragment())
+                R.id.nav_challenges -> openFragment(ChallengesFragment())
+                R.id.nav_profile -> openFragment(ProfileFragment())
+                else -> openFragment(HomeFragment())
+            }
+            true
+        }
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment, fragment)
+            .commit()
     }
 }

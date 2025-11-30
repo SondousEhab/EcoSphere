@@ -47,139 +47,103 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingBottom="100dp"
-    app:layout_constraintTop_toBottomOf="@id/status_bar_image"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/status_bar_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EcoSphere"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#4CAF50"/>
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/ph1"
-            android:contentDescription="@null"
-            android:layout_marginTop="18dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User1234"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#1D4F00"/>
-
-        <TextView
-            android:id="@+id/points"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="200 Points"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#1D4F00"
-            android:layout_marginTop="8dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Completed challenges:"
-            android:textSize="20sp"
-            android:textColor="#1D4F00"
-            android:layout_gravity="start"
-            android:layout_marginTop="16dp"/>
-
-        <!-- كارت 1 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:background="#F5FFEB"
-            android:layout_marginTop="8dp">
+            android:gravity="center_horizontal"
+            android:padding="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Plant a Seed"
-                    android:textColor="#000000"
-                    android:textSize="16sp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ph3"
-                    android:contentDescription="@null"/>
-            </LinearLayout>
-
+            <!-- اسم التطبيق -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Plant a small seed at home (beans, lentil, or any plant)."
-                android:textColor="#757575"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
+                android:text="EcoSphere"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#4CAF50"/>
 
-        <!-- كارت 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:background="#F5FFEB"
-            android:layout_marginTop="8dp">
+            <!-- صورة البروفايل -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ph1"
+                android:contentDescription="@null"
+                android:layout_marginTop="18dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Meatless Day"
-                    android:textColor="#000000"
-                    android:textSize="16sp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ph3"
-                    android:contentDescription="@null"/>
-            </LinearLayout>
-
+            <!-- اسم المستخدم -->
             <TextView
+                android:id="@+id/usernameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#1D4F00"
+                android:layout_marginTop="8dp"/>
+
+            <!-- عدد النقاط -->
+            <TextView
+                android:id="@+id/points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Points: 0"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#1D4F00"
+                android:layout_marginTop="8dp"/>
+
+            <!-- عنوان عدد التحديات المكتملة -->
+            <TextView
+                android:id="@+id/completedTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completed challenges:"
+                android:textSize="20sp"
+                android:textColor="#1D4F00"
+                android:layout_gravity="start"
+                android:layout_marginTop="16dp"/>
+
+            <!-- عدد التحديات المكتملة -->
+            <TextView
+                android:id="@+id/completedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1D4F00"
+                android:layout_marginTop="4dp"/>
+
+            <!-- التحديات المضافة للبروفايل -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profileChallengesRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Eat only plant-based food for one day."
-                android:textColor="#757575"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp"/>
+                android:padding="16dp" />
+
+            <!-- زرار تسجيل الخروج -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:text="Log out"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#E57373"
+                app:cornerRadius="24dp"
+                android:layout_gravity="center" />
+
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
-</ScrollView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

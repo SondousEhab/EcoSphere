@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoSphere"
         tools:targetApi="31">
+
         <activity
             android:name=".LogIn"
             android:exported="false" />
@@ -30,15 +31,21 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <!-- جديدة: شاشة تفاصيل التحدي -->
+        <activity
+            android:name=".ChallengeDetailActivity"
+            android:exported="false" />
+
         <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>

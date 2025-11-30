@@ -7,15 +7,25 @@ import android.os.Handler
 import android.os.Looper
 
 class SplashScreen : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        // الانتقال إلى MainActivity بعد 3 ثواني
+        val pref = UserPref(this)
+
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, Onboarding01::class.java)
-            startActivity(intent)
-            finish() // إغلاق شاشة البداية
-        }, 3000) // 3000 ملي ثانية = 3 ثواني
+
+            val nextIntent = if (pref.isLoggedIn()) {
+                // لو اليوزر مسجل دخول قبل كده → دخّليه على MainActivity
+                Intent(this, MainActivity::class.java)
+            } else {
+                // أول مرة أو مش لوج إن → روّحي Onboarding01
+                Intent(this, Onboarding01::class.java)
+            }
+
+            startActivity(nextIntent)
+            finish()
+        }, 3000) // 3 ثواني
     }
 }
