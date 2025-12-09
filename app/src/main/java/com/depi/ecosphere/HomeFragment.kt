@@ -14,18 +14,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // تحميل الداتا المحفوظة من الـ SharedPreferences
+
         sharedViewModel.loadFromPrefs(requireContext())
 
         val treeImage = view.findViewById<ImageView>(R.id.treeImage)
         val pointsText = view.findViewById<TextView>(R.id.homePoints)
 
-        // نربط الـ UI بالنقط
+
         sharedViewModel.points.observe(viewLifecycleOwner) { points ->
-            // نص النقط تحت الشجرة
+
             pointsText.text = "Points: $points"
 
-            // اختيار صورة الشجرة حسب عدد النقط
+
             when {
                 points < 50 -> treeImage.setImageResource(R.drawable.tree_level1)
                 points < 100 -> treeImage.setImageResource(R.drawable.tree_level2)

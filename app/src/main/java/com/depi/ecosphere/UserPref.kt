@@ -14,7 +14,7 @@ class UserPref(context: Context) {
             putString("password", password)
             putString("username", username)
             putBoolean("logged_in", true)
-            putInt("points", 0) // نبدأ من 0 زي ما قلنا
+            putInt("points", 0)
             putInt("completed_challenges", 0)
             apply()
         }

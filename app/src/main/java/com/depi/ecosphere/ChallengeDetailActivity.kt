@@ -14,13 +14,13 @@ class ChallengeDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_challenge_detail)
 
-        // Get data from intent
+
         val challengeTitle = intent.getStringExtra("challenge_title") ?: "Challenge"
         val challengeDescription = intent.getStringExtra("challenge_description") ?: "Description"
         val challengeImageRes = intent.getIntExtra("challenge_image", R.drawable.ic_plastic)
         val challengeIndex = intent.getIntExtra("challenge_index", 0)
 
-        // Initialize views
+
         val titleTextView = findViewById<TextView>(R.id.challengeTitle)
         val descriptionTextView = findViewById<TextView>(R.id.challengeDescription)
         val challengeImageView = findViewById<ImageView>(R.id.challengeImage)
@@ -28,17 +28,17 @@ class ChallengeDetailActivity : AppCompatActivity() {
         val markCompleteButton = findViewById<Button>(R.id.markCompleteButton)
         val shareButton = findViewById<Button>(R.id.shareButton)
 
-        // Set challenge data
+
         titleTextView.text = challengeTitle
         descriptionTextView.text = challengeDescription
         challengeImageView.setImageResource(challengeImageRes) // تعيين الصورة المناسبة
 
-        // Back button click
+
         backButton.setOnClickListener {
             finish()
         }
 
-        // Mark as complete button
+
         markCompleteButton.setOnClickListener {
             val resultIntent = Intent()
             resultIntent.putExtra("completed_challenge_index", challengeIndex)
@@ -48,7 +48,7 @@ class ChallengeDetailActivity : AppCompatActivity() {
             finish()
         }
 
-        // Share button
+
         shareButton.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"

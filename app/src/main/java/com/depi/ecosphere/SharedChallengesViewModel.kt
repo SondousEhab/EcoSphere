@@ -19,7 +19,7 @@ class SharedChallengesViewModel : ViewModel() {
         private const val KEY_PROFILE = "profile_challenges"
     }
 
-    // استدعاء ده من الفراجمنت وقت الفتح
+
     fun loadFromPrefs(context: Context) {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 

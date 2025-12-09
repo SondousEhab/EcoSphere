@@ -21,7 +21,7 @@ class ChallengesFragment : Fragment(R.layout.fragment_challenges) {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.challengesRecyclerView)
 
-        // المرة الوحيدة اللي بنعمل فيها أداپتر
+
         adapter = ChallengesAdapter(
             emptyList(),
             onClick = { challenge ->
@@ -33,12 +33,12 @@ class ChallengesFragment : Fragment(R.layout.fragment_challenges) {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
-        // نسمع أي تغيير في البروفايل
+
         sharedViewModel.profileChallenges.observe(viewLifecycleOwner) { profileList ->
             updateAvailableChallenges(profileList)
         }
 
-        // أول تحميل بعد فتح الأبلكيشن
+
         updateAvailableChallenges(sharedViewModel.profileChallenges.value ?: emptyList())
     }
 
@@ -46,7 +46,7 @@ class ChallengesFragment : Fragment(R.layout.fragment_challenges) {
 
         val allChallenges = ChallengeData.challenges
 
-        // ❗ فلترة: نشيل أي تحدي موجود في البروفايل
+
         val availableChallenges = allChallenges.filterNot { profileChallenge ->
             profileList.any { it.title == profileChallenge.title }
         }
