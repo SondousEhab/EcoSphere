@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".ChallengesFragment">
 
-    <!-- الهيدر لو عايزاه (اختياري) -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -46,7 +46,7 @@
             android:layout_marginTop="55dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- هنا الـ RecyclerView بتاع التحديات -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/challengesRecyclerView"
         android:layout_width="match_parent"
