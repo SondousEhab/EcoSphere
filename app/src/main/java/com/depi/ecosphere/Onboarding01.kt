@@ -23,7 +23,7 @@ class Onboarding01 : AppCompatActivity() {
         }
         // Skip → MainActivity
         findViewById<View>(R.id.skipText)?.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, SignUp::class.java))
             finish()
         }
         // 🔹 ربط زر "Next"
